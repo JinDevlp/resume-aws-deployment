@@ -1,0 +1,55 @@
+{% load static %} {% block content %}
+<nav class="navbar position-fixed navbar-expand-lg">
+  <div
+    class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"
+  >
+    <a
+      href=""
+      class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+    >
+      <img style="width: 250px" src="" />
+    </a>
+
+    <div class="py-2 px-3">
+      <a class="text-decoration-none text-black" href="{% url 'home' %}">
+        <div class="d-flex align-items-center text-center">
+          <img
+            src="{% static 'images/jinchoi.jpg'%}"
+            alt="..."
+            width="65"
+            class="mr-3 rounded-circle img-thumbnail shadow-sm"
+          />
+        </div>
+      </a>
+    </div>
+    <div class="py-4 px-3 mb-4">
+      <ul
+        class="nav flex-column mb-sm-auto mb-0 justify-content-center align-items-sm-start"
+        id="menu"
+      >
+        <li class="nav-item mb-5">
+          <a
+            class="social-icon text-decoration-none text-black"
+            href="https://www.linkedin.com/in/devjinchoi/"
+            ><i class="fab fa-linkedin-in fa-2xl"></i>
+          </a>
+        </li>
+        <li class="nav-item mb-5">
+          <a
+            class="social-icon text-decoration-none text-black"
+            href="https://github.com/JinDevlp"
+            ><i class="fab fa-github fa-2xl"></i
+          ></a>
+        </li>
+        <li class="nav-item mb-5">
+          <a
+            class="social-icon text-decoration-none text-black"
+            href="https://medium.com/@jinhunchoi94"
+            ><i class="fa-brands fa-medium fa-2xl"></i
+          ></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{% endblock content %}

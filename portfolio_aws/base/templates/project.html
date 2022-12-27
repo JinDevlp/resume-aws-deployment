@@ -1,0 +1,46 @@
+{% extends 'main.html'%} {% load static %} {% block content %}
+<div class="container ">
+  <div class="row mt-5 justify-content-center ">
+    <div class="col-lg-9">
+      <section id="scroll">
+        <div class="container px-5">
+          <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-lg-2">
+              <div class="p-5">
+                <img
+                  class="img-fluid"
+                  src="{{project.thumbnail.url}}"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+              <div class="p-5">
+                <h2 class="display-4">{{project.title}}</h2>
+                <ul class="list-inline dev-icons">
+                    {% for skill in project.skills.all %}
+                    <span class="badge rounded-pill bg-info">
+                        <li class="list-inline-item">{{skill}}</li>
+                    </span>
+                </li>
+                {% endfor %}           
+            </ul>
+                <p>{{project.body}}</p>
+                <p>Launch Live: 
+                    <a class="text-decoration-none" href="#">
+                        {{project.project_link}}</p>
+                    </a>
+                    <p>Github Link: 
+                        <a class="text-decoration-none" href="#">
+                            {{project.github_link}}</p>
+                        </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+{% endblock content%}

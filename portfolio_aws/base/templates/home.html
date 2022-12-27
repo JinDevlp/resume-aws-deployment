@@ -1,0 +1,221 @@
+{% extends 'main.html'%} {% load static %} {% block content %}
+<div class="col-lg-9">
+  <!-- Header Intro -->
+  <div class="container p-3 text-center">
+    <div class="resume-section-content">
+          <h1 class="mb-1 font-weight-bold">
+              Jin Choi
+            </h1>
+      <div class="subheading">
+        <h5 class="text-muted mb-2">Cloud Developer</h5>
+        <span class="text-muted">
+          Dallas, TX (Open to Relocate)
+        </span>
+        <i class="fa-solid fa-phone text-muted">
+        </i>
+              <span>(214) 998-1701 ·</span>
+        <a class="text-decoration-none text-black" href="mailto:name@email.com"></a>
+          <i class="fa-solid fa-envelope"></i> jinhunchoi94@gmail.com</a
+        >
+      </div>
+      
+      <p class="lead mt-3">
+        A Respectful, Analytical Python Developer with over 2 years of client
+        relations experience seeking an Entry-level Cloud Developer role. I have
+        a passion for analyzing problems and providing creative solutions.
+      </p>
+      <p class="text-muted">
+        <a class="text-decoration-none" href="{% static 'resume.pdf'%}">
+          Download Resume 
+        </a>
+      </p>
+    </div>
+  </div>
+  <!-- End of Header Intro -->
+  <hr class="m-3" />
+
+  <!-- Skills -->
+  <div class="container pb-4">
+    <div class="resume-section-content">
+      <h3 class="fw-bold">Skills</h3>
+    </div>
+  </div>
+  <div class="container mb-5">
+    <div class="row">
+      <div class="col-lg-10">
+        <img class="img-fluid" src="{% static 'skills.png'%}" alt="..." />
+      </div>
+    </div>
+  </div>
+
+  <!-- End of  SKills-->
+
+
+  <!-- Projects-->
+  <div class="container pb-4">
+    <div class="resume-section-content">
+      <h3 class="fw-bold">Projects</h3>
+    </div>
+  </div>
+
+  <div class="container mb-4">
+    <div class="row g-0">
+      {% for project in projects %}
+      <a
+        class="text-decoration-none text-black"
+        href="{% url 'project' project.id%}"
+      >
+        <div class="row gx-0 mb-5 mb-lg-5 justify-content-center">
+          <div class="col-lg-6">
+            <div class="text-center h-100 project">
+              <div class="d-flex h-50 ">
+                <div
+                  class="project-text w-100 my-auto mr-3 text-center text-lg-left"
+                >
+                  <h5>{{project.title}}</h5>
+                  <p class="mb-0 text-muted">{{project.body}}</p>
+                </div>
+              </div>
+              <div class="d-flex flex-column">
+                <ul class="list-inline dev-icons">
+                  {% for skill in project.skills.all %}
+                  <span class="badge rounded-pill bg-info">
+                    <li class="list-inline-item">{{skill}}</li>
+                  </span>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <img
+              class="img-fluid rounded-circle"
+              src="{{project.thumbnail.url}}"
+              alt="..."
+            />
+          </div>
+      
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+    <!-- End of Projects -->
+    <!-- Education-->
+    <div class="container pb-4">
+      <div class="resume-section-content">
+        <h3 class="fw-bold">Education & Certificates</h3>
+      </div>
+    </div>
+
+    <div class="container mb-4 ">
+      <div class="d-flex flex-column flex-md-row justify-content-between">
+        <div class="row">
+          <h5 class="mb-0">
+            Amazon Web Services Solutions Architect - Associate
+          </h5>
+          <div class="subheading mb-3 text-muted">
+            Amazon Web Services (AWS)
+            <p>In progress</p>
+          </div>
+        </div>
+        <div class="flex-shrink-0">
+          <span class="text-muted">December 2022 - present</span>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column flex-md-row justify-content-between">
+        <div class="flex-grow-1">
+          <h5 class="mb-0">Amazon Web Services Cloud Practitioner</h5>
+          <div class="subheading mb-3 text-muted">
+            Amazon Web Services (AWS)
+            <p>Q4Y2F3D1TNEQ1HGX</p>
+          </div>
+        </div>
+        <div class="flex-shrink-0">
+          <span class="text-muted">October 2022 - October 2025</span>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column flex-md-row justify-content-between">
+        <div class="flex-grow-1">
+          <h5 class="mb-0">Backend, SQL and DevOps with Python</h5>
+          <div class="subheading mb-3 text-muted">
+            NuCamp
+            <p>Honors Certificate</p>
+          </div>
+        </div>
+        <div class="flex-shrink-0">
+          <span class="text-muted">July 2022 - October 2022</span>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column flex-md-row justify-content-between">
+        <div class="flex-grow-1">
+          <h5 class="mb-0">Masters</h5>
+          <div class="subheading mb-3 text-muted">
+            Central Baptist Theological, Shawnee, KS
+          </div>
+        </div>
+        <div class="flex-shrink-0">
+          <span class="text-muted">May 2019 - May 2021</span>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column flex-md-row justify-content-between">
+        <div class="flex-grow-1">
+          <h5 class="mb-0">Bachelor of Science</h5>
+          <div class="subheading mb-3 text-muted">
+            University of North Texas, Denton, TX
+          </div>
+        </div>
+        <div class="flex-shrink-0">
+          <span class="text-muted">May 2014 - May 2018</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- End of Education -->
+
+  
+    <!-- Experience-->
+    <div class="container pb-4">
+        <div class="resume-section-content">
+          <h3 class="fw-bold">Experience</h3>
+        </div>
+      </div>
+  
+      <div class="container mb-4 ">
+        <div class="d-flex flex-column flex-md-row justify-content-between">
+          <div class="row">
+            <h5 class="mb-0">
+                Account Manager & Supply Chain Manager
+            </h5>
+            <div class="subheading mb-3 text-muted">
+                Promise Total Services, Dallas, TX
+                <ul>
+                    <li>
+                      Manage and develop professional relationships with 30+
+                      clients.
+                    </li>
+                    <li>
+                      Succeeded in securing extended contracts for 40+ accounts.
+                    </li>
+                    <li>
+                      Exceeded client expectations by understanding and resolving
+                      clients' issues
+                    </li>
+                    <li>
+                      Reduced supply costs by 20% by identifying unnecessary items
+                      and communicating with suppliers(HomeDepot & SupplyWorks)
+                    </li>
+                  </ul>
+            </div>
+          </div>
+          <div class="flex-shrink-0">
+            <span class="text-muted">September 2019 - November 2021</span>
+          </div>
+        </div>
+        </div>
+  </div>
+</div>
+{% endblock content %}
